@@ -40,7 +40,7 @@ const Chat = () => {
     const [isHistoryPanelOpen, setIsHistoryPanelOpen] = useState(false);
     const [promptTemplate, setPromptTemplate] = useState<string>("");
     const [temperature, setTemperature] = useState<number>(0.3);
-    const [minimumRerankerScore, setMinimumRerankerScore] = useState<number>(1.9);
+    const [minimumRerankerScore, setMinimumRerankerScore] = useState<number>(0);
     const [minimumSearchScore, setMinimumSearchScore] = useState<number>(0);
     const [retrieveCount, setRetrieveCount] = useState<number>(5);
     const [agenticReasoningEffort, setRetrievalReasoningEffort] = useState<string>("minimal");
