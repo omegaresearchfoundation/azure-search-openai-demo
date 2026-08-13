@@ -1,51 +1,67 @@
 .answerContainer {
     padding: 1.25em;
-    background: rgb(249, 249, 249);
+    background: var(--omega-surface);
     border-radius: 0.75em;
     box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.06),
-        0 0 1px rgba(0, 0, 0, 0.08);
-    border: 1px solid #e8e8e8;
+        0 2px 8px rgba(21, 24, 31, 0.06),
+        0 0 1px rgba(21, 24, 31, 0.08);
+    border: 1px solid var(--omega-border);
     outline: transparent solid 0.0625em;
 }
 
 .answerLogo {
     font-size: 1.75em;
+    color: var(--omega-blue);
 }
 
 .answerText {
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.375em;
+    line-height: 1.5em;
     padding-top: 1em;
     padding-bottom: 1em;
+    color: var(--omega-text);
 }
 
 .answerText h1,
-h2,
-h2 {
+.answerText h2,
+.answerText h3 {
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 600;
+    color: var(--omega-dark);
 }
 
 .answerText table {
     border-collapse: collapse;
+    width: 100%;
 }
 
 .answerText td,
 .answerText th {
-    border: 1px solid;
-    padding: 0.3125em;
+    border: 1px solid var(--omega-border);
+    padding: 0.5em;
+    text-align: left;
+}
+
+.answerText th {
+    background: rgba(10, 154, 179, 0.06);
+    color: var(--omega-dark);
+    font-weight: 600;
+}
+
+.answerText a {
+    color: var(--omega-blue);
 }
 
 .selected {
-    outline: 0.125em solid rgba(115, 118, 225, 1);
+    outline: 0.125em solid var(--omega-blue);
 }
 
 .citationLearnMore {
     margin-right: 0.3125em;
     font-weight: 600;
     line-height: 1.5em;
+    color: var(--omega-charcoal);
 }
 
 .citation {
@@ -54,14 +70,19 @@ h2 {
     text-align: center;
     border-radius: 0.25em;
     padding: 0em 0.5em;
-    background: #d1dbfa;
-    color: #123bb6;
+    background: rgba(10, 154, 179, 0.14);
+    color: #087f94;
     text-decoration: none;
     cursor: pointer;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
 }
 
 .citation:hover {
     text-decoration: underline;
+    background: rgba(10, 154, 179, 0.2);
+    color: #066c7e;
 }
 
 .followupQuestionsList {
@@ -72,19 +93,28 @@ h2 {
     margin-right: 0.3125em;
     font-weight: 600;
     line-height: 1.5em;
+    color: var(--omega-charcoal);
 }
 
 .followupQuestion {
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.5em;
     text-align: center;
     border-radius: 0.25em;
     padding: 0em 0.5em;
-    background: #e8ebfa;
-    color: black;
+    background: rgba(10, 154, 179, 0.08);
+    color: var(--omega-charcoal);
     font-style: italic;
     text-decoration: none;
     cursor: pointer;
+    transition:
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.followupQuestion:hover {
+    background: rgba(10, 154, 179, 0.14);
+    color: var(--omega-dark);
 }
 
 .supContainer {
@@ -116,13 +146,13 @@ sup {
     font-size: 0.625em;
     font-weight: 600;
     vertical-align: top;
-    top: -1;
+    top: -1px;
     margin: 0em 0.125em;
     min-width: 0.875em;
     height: 0.875em;
     border-radius: 0.1875em;
-    background: #d1dbfa;
-    color: #123bb6;
+    background: rgba(10, 154, 179, 0.14);
+    color: #087f94;
     text-decoration-color: transparent;
     outline: transparent solid 0.0625em;
     cursor: pointer;
@@ -133,10 +163,10 @@ sup {
     align-items: center;
     justify-content: center;
     border-radius: 999px;
-    background: #f4f6ff;
-    color: #123bb6;
+    background: rgba(10, 154, 179, 0.07);
+    color: #087f94;
     font-weight: 600;
-    border: 0.0625em solid #d1dbfa;
+    border: 0.0625em solid rgba(10, 154, 179, 0.22);
 }
 
 .citationStepBadgeInline {
@@ -163,15 +193,19 @@ sup {
     0% {
         content: "";
     }
+
     25% {
         content: ".";
     }
+
     50% {
         content: "..";
     }
+
     75% {
         content: "...";
     }
+
     100% {
         content: "";
     }

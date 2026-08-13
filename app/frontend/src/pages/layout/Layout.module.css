@@ -11,8 +11,9 @@
 }
 
 .header {
-    background-color: #222222;
-    color: #f2f2f2;
+    background-color: var(--omega-dark);
+    color: white;
+    border-bottom: 3px solid var(--omega-blue);
 }
 
 .headerContainer {
@@ -37,15 +38,20 @@
 }
 
 .headerTitle {
-    margin-left: 0.5rem;
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.15rem;
     font-weight: 600;
+    letter-spacing: 0.01em;
+    color: white;
 }
 
 .headerNavList {
     z-index: 100;
     display: none;
     flex-direction: column;
-    background-color: #222222;
+    background-color: var(--omega-dark);
     position: absolute;
     top: 2.7rem;
     right: 0;
@@ -147,4 +153,37 @@
     .menuToggle {
         display: none;
     }
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.brandLogo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.brandText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.05;
+}
+
+.brandName {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.brandSubtitle {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
 }

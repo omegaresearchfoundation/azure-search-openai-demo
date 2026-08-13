@@ -13,8 +13,8 @@ import {
 import { Dismiss24Regular } from "@fluentui/react-icons";
 import readNDJSONStream from "ndjson-readablestream";
 
-import appLogo from "../../assets/applogo.svg";
 import styles from "./Chat.module.css";
+import omegaLogo from "../../assets/omega-logo.png";
 
 import { chatApi, configApi, RetrievalMode, ChatAppResponse, ChatAppResponseOrError, ChatAppRequest, ResponseMessage, SpeechConfig } from "../../api";
 import { Answer, AnswerError, AnswerLoading } from "../../components/Answer";
@@ -42,11 +42,11 @@ const Chat = () => {
     const [temperature, setTemperature] = useState<number>(0.3);
     const [minimumRerankerScore, setMinimumRerankerScore] = useState<number>(0);
     const [minimumSearchScore, setMinimumSearchScore] = useState<number>(0);
-    const [retrieveCount, setRetrieveCount] = useState<number>(5);
+    const [retrieveCount, setRetrieveCount] = useState<number>(10);
     const [agenticReasoningEffort, setRetrievalReasoningEffort] = useState<string>("minimal");
     const [retrievalMode, setRetrievalMode] = useState<RetrievalMode>(RetrievalMode.Hybrid);
     const [useSemanticRanker, setUseSemanticRanker] = useState<boolean>(true);
-    const [useQueryRewriting, setUseQueryRewriting] = useState<boolean>(false);
+    const [useQueryRewriting, setUseQueryRewriting] = useState<boolean>(true);
     const [reasoningEffort, setReasoningEffort] = useState<string>("");
     const [reasoningEffortOptions, setReasoningEffortOptions] = useState<string[]>([]);
     const [streamingEnabled, setStreamingEnabled] = useState<boolean>(true);
@@ -553,7 +553,7 @@ const Chat = () => {
                 <div className={styles.chatContainer}>
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
-                            <img src={appLogo} alt="App logo" width="120" height="120" />
+                            <img src={omegaLogo} alt="Omega Research Foundation" className={styles.emptyStateLogo} />
 
                             <h1 className={styles.chatEmptyStateTitle}>{t("chatEmptyStateTitle")}</h1>
                             <h2 className={styles.chatEmptyStateSubtitle}>{t("chatEmptyStateSubtitle")}</h2>
